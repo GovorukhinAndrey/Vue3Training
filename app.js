@@ -23,6 +23,11 @@ const app = {
     methods: {
         changeTitle() {
             this.title = 'Другое название'
+        },
+        addItem(event) {
+            this.items.unshift(this.$refs.myInput.value)
+            this.$refs.myInput.value = ''
+            console.log(event.key)
         }
     }
 }
