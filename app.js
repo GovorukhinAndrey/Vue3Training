@@ -4,6 +4,7 @@ const App = {
             title: 'Список заметок',
             placeholder: 'Введите название заметки',
             inputValue: '',
+            notes: ['заметка 1', 'заметка 2'],
         }
     },
     methods: {
