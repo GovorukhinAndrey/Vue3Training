@@ -7,6 +7,11 @@ const App = {
             notes: ['заметка 1', 'заметка 2'],
         }
     },
+    computed: {
+        doubleCount(){
+            return this.notes.length * 2
+        }
+    },
     methods: {
         inputChangeHandler(event){
             this.inputValue = event.target.value;
