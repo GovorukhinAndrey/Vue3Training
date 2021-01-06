@@ -23,7 +23,14 @@
             <hr/>
             <ul class="list" v-if="notes.length">
                 <li class="list-item" v-for="(item, idx) in notes">
-                    {{ idx + 1 }}: {{ toUpperCase(item) }}
+                    <div>
+                        <span :class="['bold', {'primary': item.length > 5}]">Номер </span>
+                        <span :class="setClass(item)">{{ idx + 1 }}: </span>
+                        <span :class="{
+                            'primary': true,
+                            'bold': item.length > 5
+                        }">{{ toUpperCase(item) }}</span>
+                    </div>
                     <button @click="removeNote(idx)" class="btn danger">Удалить</button>
                 </li>
                 <hr>

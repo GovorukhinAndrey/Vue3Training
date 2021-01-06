@@ -44,6 +44,9 @@ const App = {
         },
         toUpperCase(str){
             return str.toUpperCase();
+        },
+        setClass(str){
+            return str.length > 5 ? 'primary' : 'bold'
         }
     },
 }
