@@ -12,7 +12,8 @@ const app = {
             firstName: 'Andrey',
             lastName: 'Govorukhin',
             age: 28
-        }
+        },
+        items: [1,2,3,4,5,6]
     }),
     methods: {
         changeTitle() {

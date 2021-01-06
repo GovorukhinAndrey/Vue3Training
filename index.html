@@ -32,6 +32,9 @@
       <li class="list-item" v-for="(value, key) in person">
         <strong>{{ key }}</strong> {{ value }}
       </li>
+      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)">
+        <strong>{{ item }}</strong>
+      </li>
     </ul>
   </div>
 </div>
