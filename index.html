@@ -29,6 +29,9 @@
       <li class="list-item" v-for="item in 7">
         {{ item }}
       </li>
+      <li class="list-item" v-for="(value, key) in person">
+        <strong>{{ key }}</strong> {{ value }}
+      </li>
     </ul>
   </div>
 </div>
