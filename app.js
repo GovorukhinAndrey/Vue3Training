@@ -15,6 +15,11 @@ const app = {
         },
         items: [1,2,3,4,5,6]
     }),
+    computed: {
+        evenItems() {
+            return this.items.filter(i => i % 2 === 0)
+        }
+    },
     methods: {
         changeTitle() {
             this.title = 'Другое название'
