@@ -25,7 +25,7 @@
   <br>
   <div class="card center">
     <h1>{{ title }}</h1>
-    <ul class="list">
+    <ul class="list" v-if="items.length">
       <li class="list-item" v-for="item in 7">
         {{ item }}
       </li>
@@ -36,6 +36,8 @@
         <strong>{{ item }}</strong>
       </li>
     </ul>
+    <h3 v-else>Элементов нет</h3>
+    <h3 v-show="!items.length">Элементов нет через v-show</h3>
   </div>
 </div>
 
