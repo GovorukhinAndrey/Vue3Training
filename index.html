@@ -22,6 +22,21 @@
 
     <button class="btn" @click="changeTitle">Сменить заголовок</button>
   </div>
+  <br>
+  <div class="card center">
+    <h1>{{ title }}</h1>
+    <ul class="list">
+      <li class="list-item" v-for="item in 7">
+        {{ item }}
+      </li>
+      <li class="list-item" v-for="(value, key) in person">
+        <strong>{{ key }}</strong> {{ value }}
+      </li>
+      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)">
+        <strong>{{ item }}</strong>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <script src="https://unpkg.com/vue@next"></script>
