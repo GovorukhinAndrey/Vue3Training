@@ -18,7 +18,7 @@
       <input type="text" @keyup.enter="addItem" ref="myInput">
     </div>
     <ul class="list" v-if="items.length">
-      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)">
+      <li class="list-item" v-for="(item, idx) in items" @click="remove(idx), log(item)">
         <strong>{{ item }}</strong>&nbsp;
         <input type="text" @click.stop>
       </li>
