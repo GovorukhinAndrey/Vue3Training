@@ -12,6 +12,19 @@ const App = {
             return this.notes.length * 2
         }
     },
+    watch: {
+        inputValue(value){
+            if(value.length > 10) {
+                this.inputValue = ''
+            }
+        },
+        notes: {
+            handler(value) {
+                console.log(value)
+            },
+            immediate: true
+        }
+    },
     methods: {
         inputChangeHandler(event){
             this.inputValue = event.target.value;
