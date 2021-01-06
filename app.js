@@ -10,6 +10,12 @@ const App = {
     computed: {
         doubleCount(){
             return this.notes.length * 2
+        },
+        titleColor(){
+            return this.inputValue.length < 3 ?  'darkred' : 'darkblue'
+        },
+        titleSize(){
+            return this.inputValue.length < 6 ? '2rem' : '1.5rem'
         }
     },
     watch: {
