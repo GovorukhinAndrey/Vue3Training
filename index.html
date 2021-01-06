@@ -11,6 +11,9 @@
   <div class="card center">
     <h1>{{ title }}</h1>
     <h2 v-text="title"></h2>
+    <h2 v-once>{{ title }}</h2>
+
+    <button class="btn" @click="changeTitle">Сменить заголовок</button>
   </div>
 </div>
 

@@ -7,6 +7,11 @@ const app = {
     // },
     data: () => ({
         title: 'Я есть Грут',
-    })
+    }),
+    methods: {
+        changeTitle() {
+            this.title = 'Другое название'
+        }
+    }
 }
 Vue.createApp(app).mount('#app')
