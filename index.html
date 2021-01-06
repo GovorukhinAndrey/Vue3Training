@@ -19,9 +19,13 @@
                         v-bind:placeholder="placeholder"
                 >
             </div>
-            <h2>inputValue: {{ inputValue }}</h2>
             <button class="btn">Добавить</button>
             <hr/>
+            <ul class="list">
+                <li class="list-item" v-for="item in notes">
+                    {{ item }}
+                </li>
+            </ul>
         </div>
     </div>
 
