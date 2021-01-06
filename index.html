@@ -48,6 +48,16 @@
     <h3 v-else>Элементов нет</h3>
     <h3 v-show="!items.length">Элементов нет через v-show</h3>
   </div>
+  <br>
+  <div class="card center">
+    <h1>Фильтрация списка</h1>
+    <ul class="list" v-if="items.length">
+      <li class="list-item" v-for="(item, idx) in evenItems" @click="items.splice(idx, 1)" :key="item">
+        <strong>{{ item }}</strong>&nbsp;
+        <input type="text" @click.stop>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <script src="https://unpkg.com/vue@next"></script>
