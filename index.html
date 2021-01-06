@@ -14,50 +14,62 @@
 <body>
 <div class="container pt-5" id="app" v-cloak>
   <div class="card center">
-    <h1>Пример с key</h1>
-    <ul class="list">
-      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)" :key="item">
+    <div class="form-control">
+      <input type="text" @keyup.enter="addItem" ref="myInput">
+    </div>
+    <ul class="list" v-if="items.length">
+      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)">
         <strong>{{ item }}</strong>&nbsp;
         <input type="text" @click.stop>
-      </li>
-    </ul>
-  </div>
-  <div class="card center">
-    <h1>{{ title }}</h1>
-    <h2 v-text="title"></h2>
-    <h2 v-once>{{ title }}</h2>
-    <h2 v-pre>{{ title }}</h2>
-    <div v-html="myHtml"></div>
-
-    <button class="btn" @click="changeTitle">Сменить заголовок</button>
-  </div>
-  <br>
-  <div class="card center">
-    <h1>{{ title }}</h1>
-    <ul class="list" v-if="items.length">
-      <li class="list-item" v-for="item in 7">
-        {{ item }}
-      </li>
-      <li class="list-item" v-for="(value, key) in person">
-        <strong>{{ key }}</strong> {{ value }}
-      </li>
-      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)">
-        <strong>{{ item }}</strong>
       </li>
     </ul>
     <h3 v-else>Элементов нет</h3>
-    <h3 v-show="!items.length">Элементов нет через v-show</h3>
   </div>
-  <br>
-  <div class="card center">
-    <h1>Фильтрация списка</h1>
-    <ul class="list" v-if="items.length">
-      <li class="list-item" v-for="(item, idx) in evenItems" @click="items.splice(idx, 1)" :key="item">
-        <strong>{{ item }}</strong>&nbsp;
-        <input type="text" @click.stop>
-      </li>
-    </ul>
-  </div>
+<!--  <div class="card center">-->
+<!--    <h1>Пример с key</h1>-->
+<!--    <ul class="list">-->
+<!--      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)" :key="item">-->
+<!--        <strong>{{ item }}</strong>&nbsp;-->
+<!--        <input type="text" @click.stop>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="card center">-->
+<!--    <h1>{{ title }}</h1>-->
+<!--    <h2 v-text="title"></h2>-->
+<!--    <h2 v-once>{{ title }}</h2>-->
+<!--    <h2 v-pre>{{ title }}</h2>-->
+<!--    <div v-html="myHtml"></div>-->
+
+<!--    <button class="btn" @click="changeTitle">Сменить заголовок</button>-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <div class="card center">-->
+<!--    <h1>{{ title }}</h1>-->
+<!--    <ul class="list" v-if="items.length">-->
+<!--      <li class="list-item" v-for="item in 7">-->
+<!--        {{ item }}-->
+<!--      </li>-->
+<!--      <li class="list-item" v-for="(value, key) in person">-->
+<!--        <strong>{{ key }}</strong> {{ value }}-->
+<!--      </li>-->
+<!--      <li class="list-item" v-for="(item, idx) in items" @click="items.splice(idx, 1)">-->
+<!--        <strong>{{ item }}</strong>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--    <h3 v-else>Элементов нет</h3>-->
+<!--    <h3 v-show="!items.length">Элементов нет через v-show</h3>-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <div class="card center">-->
+<!--    <h1>Фильтрация списка</h1>-->
+<!--    <ul class="list" v-if="items.length">-->
+<!--      <li class="list-item" v-for="(item, idx) in evenItems" @click="items.splice(idx, 1)" :key="item">-->
+<!--        <strong>{{ item }}</strong>&nbsp;-->
+<!--        <input type="text" @click.stop>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
 </div>
 
 <script src="https://unpkg.com/vue@next"></script>
