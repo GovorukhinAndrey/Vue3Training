@@ -26,3 +26,36 @@ const app = Vue.createApp({
 })
 
 app.mount('#app')
+
+// ======
+
+let title = 'Vue 3';
+let message = 'Заголовок это:' + title
+//
+// console.log(message)
+//
+// title = 'Angular 10'
+//
+// console.log(message)
+//
+const data = {
+    title: 'Vue 3',
+    message: 'Заголовок это: Vue 3'
+}
+
+const proxy = new Proxy(data, {
+    // get(target, p) {
+    //     console.log(target)
+    //     console.log(p)
+    // },
+    set(target, key, value) {
+        if (key === 'title') {
+            target.message = 'Заголовок это:' + value
+        }
+
+        target[key] = value
+    }
+})
+
+proxy.title = 'Angular 100'
+console.log(proxy)
