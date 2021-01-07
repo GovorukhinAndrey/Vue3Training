@@ -1,5 +1,9 @@
 const h = Vue.h
-
+const app2 = Vue.createApp({
+    data: () => ({
+        title: 'New title 2'
+    })
+})
 const app = Vue.createApp({
     // template: `
     //     <div class="center card">
@@ -49,8 +53,8 @@ const app = Vue.createApp({
     },
 })
 
+app2.mount('#app2')
 app.mount('#app')
-
 setTimeout(() => {
     app.unmount()
 }, 2000)
