@@ -61,7 +61,11 @@ const App = {
      * Кнопка вперед или закончить
      */
     nextOfFinish() {
-      this.activeIndex += 1
+      if (this.isLastStep) {
+        this.isFinished = true
+      } else {
+        this.activeIndex += 1
+      }
     },
     /**
      * Установить активным шаг
