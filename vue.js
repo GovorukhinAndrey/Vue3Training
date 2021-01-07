@@ -44,7 +44,11 @@ const App = {
      * Действие нажатия кнопки назад
      */
     prev() {
-      this.activeIndex -= 1
+      if (this.isFinished) {
+        this.reset()
+      } else if (this.activeIndex > 0) {
+        this.activeIndex -= 1
+      }
     },
     /**
      * Сброс к началу
