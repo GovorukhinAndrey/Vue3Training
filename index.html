@@ -20,8 +20,8 @@
           </li>
         </ul>
         <div>
-          <button @click="prev" class="btn">Назад</button>
-          <button @click="nextOfFinish" class="btn primary">Вперед</button>
+          <button @click="prev" :disabled="isFirstStep" class="btn">{{ textBtnPrev }}</button>
+          <button @click="nextOfFinish" v-show="!isFinished" class="btn primary">{{ textBtnNext }}</button>
         </div>
       </div>
     </div>
