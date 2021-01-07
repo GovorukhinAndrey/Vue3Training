@@ -18,6 +18,30 @@ const app = Vue.createApp({
     data: () => ({
         title: 'Vue 3 Example Template'
     }),
+    beforeCreate() {
+        console.log('beforeCreate')
+    },
+    created() {
+        console.log('created')
+    },
+    beforeMount() {
+        console.log('beforeMount')
+    },
+    mounted() {
+        console.log('mounted')
+    },
+    beforeUpdate() {
+        console.log('beforeUpdate')
+    },
+    updated() {
+        console.log('updated')
+    },
+    beforeUnmount() {
+        console.log('beforeUnmount')
+    },
+    unmounted() {
+        console.log('unmounted')
+    },
     methods: {
         changeTitle() {
             this.title = 'Изменили!!'
@@ -26,6 +50,10 @@ const app = Vue.createApp({
 })
 
 app.mount('#app')
+
+setTimeout(() => {
+    app.unmount()
+}, 2000)
 
 // ======
 
@@ -58,4 +86,4 @@ const proxy = new Proxy(data, {
 })
 
 proxy.title = 'Angular 100'
-console.log(proxy)
+// console.log(proxy)
