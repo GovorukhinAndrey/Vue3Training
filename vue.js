@@ -42,6 +42,7 @@ const App = {
      * Сброс к началу
      */
     reset() {
+      this.isFinished = false
       this.activeIndex = 0
     },
     /**
