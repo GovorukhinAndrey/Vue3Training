@@ -18,10 +18,18 @@ const App = {
     currentText() {
       return this.steps[this.activeIndex].text
     },
-    // тут стоит определить несколько свойств:
-    // 1. текущий выбранный шаг
-    // 2. выключена ли кнопка назад
-    // 3. находимся ли мы на последнем шаге
+    isLastStep() {
+      return this.activeIndex === this.steps.length - 1
+    },
+    isFirstStep() {
+      return this.activeIndex === 0
+    },
+    textBtnNext() {
+      return this.isLastStep ? 'Закончить' : 'Вперед'
+    },
+    textBtnPrev() {
+      return this.isFinished ? 'Начать заного' : 'Назад'
+    },
   },
   methods: {
     /**
