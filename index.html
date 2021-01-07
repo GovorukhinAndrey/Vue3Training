@@ -15,10 +15,9 @@
       <div class="steps">
         <div class="steps-content" v-text="currentText"></div>
         <ul class="steps-list">
-          <li class="steps-item done"><span>1</span> Шаг 1</li>
-          <li class="steps-item done"><span>2</span> Шаг 2</li>
-          <li class="steps-item active"><span>3</span> Шаг 3</li>
-          <li class="steps-item"><span>4</span> Шаг 4</li>
+          <li class="steps-item" :class="setClassForStep(idx)" v-for="(step, idx) in steps" :key="step.title">
+            <span @click="setActive(idx)">{{ idx + 1 }}</span> {{ step.title }}
+          </li>
         </ul>
         <div>
           <button @click="prev" class="btn">Назад</button>
