@@ -14,6 +14,9 @@ const App = {
       ]
   }),
   computed: {
+    currentText() {
+      return this.steps[this.activeIndex].text
+    },
     // тут стоит определить несколько свойств:
     // 1. текущий выбранный шаг
     // 2. выключена ли кнопка назад
