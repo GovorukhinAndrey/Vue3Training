@@ -24,7 +24,7 @@
         <h4 v-else class="center">План выполнен</h4>
         <div>
           <button @click="prev" :disabled="isFirstStep" class="btn">{{ textBtnPrev }}</button>
-          <button @click="nextOfFinish" v-show="!isFinished" class="btn primary">{{ textBtnNext }}</button>
+          <button @click="nextOfFinish" v-if="!isFinished" class="btn primary">{{ textBtnNext }}</button>
         </div>
       </div>
     </div>
